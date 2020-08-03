@@ -1,0 +1,61 @@
+{
+  "name": "rocon-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build:webpack",
+    "build:webpack": "webpack --mode production",
+    "watch": "npm run watch:webpack",
+    "watch:webpack": "webpack-dev-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/react-fontawesome": "^0.1.11",
+    "react": "0.0.0-experimental-33c3af284",
+    "react-dom": "0.0.0-experimental-33c3af284",
+    "styled-components": "^5.0.1",
+    "tslib": "^2.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.0",
+    "@babel/preset-typescript": "^7.10.4",
+    "@types/google.analytics": "0.0.40",
+    "@types/gtag.js": "0.0.3",
+    "@types/react": "^16.9.44",
+    "@types/react-dom": "^16.9.5",
+    "@types/styled-components": "^5.1.2",
+    "comlink-loader": "^2.0.0",
+    "copy-webpack-plugin": "^6.0.3",
+    "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^4.3.0",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.0",
+    "ts-loader": "^7.0.5",
+    "typescript": "^3.9.7",
+    "url-loader": "^4.0.0",
+    "webpack": "^4.44.1",
+    "webpack-bundle-analyzer": "^3.6.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.10.3",
+    "webpack-manifest-plugin": "^2.2.0",
+    "webpack-pwa-manifest": "^4.2.0"
+  },
+  "keywords": [],
+  "author": "uhyo <uhyo@uhy.ooo>",
+  "license": "MIT",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}

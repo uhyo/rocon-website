@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Privacy Policy - Rocon Website</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <% if(htmlWebpackPlugin.options.local.ga) { %>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=<%= htmlWebpackPlugin.options.local.ga.id %>"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "<%= htmlWebpackPlugin.options.local.ga.id %>");
+    </script>
+    <% } %>
+  </head>
+  <body>
+    <h1>Privacy Policy</h1>
+    <p>
+      This website uses
+      <b
+        ><a target="_blank" href="https://www.google.com/analytics"
+          >Google Analytics</a
+        ></b
+      >
+      and <b>Cookies</b> in order to collect and analyze usage of this service.
+      See
+      <a href="https://policies.google.com/technologies/partner-sites">
+        How Google uses information from sites or apps that use our services</a
+      >
+      for more details.
+    </p>
+    <p>
+      By continuing to use this service, you agree to the use of Cookies and
+      Google Analytics.
+    </p>
+  </body>
+</html>

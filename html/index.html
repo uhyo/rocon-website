@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Rocon Website</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="@uhyo_" />
+    <meta property="og:title" content="Rocon Website" />
+    <meta property="og:description" content="Rocon Website and Tutorial" />
+    <!-- <meta
+      property="og:image"
+      content="https://type-puzzles.uhyohyo.net/og-image.png"
+    /> -->
+    <link rel="icon" href="/og-image.png" />
+    <link href="/new.min.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Asap:700|Source+Code+Pro&display=block"
+      rel="stylesheet"
+    />
+    <% if(htmlWebpackPlugin.options.local.ga) { %>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=<%= htmlWebpackPlugin.options.local.ga.id %>"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "<%= htmlWebpackPlugin.options.local.ga.id %>");
+    </script>
+    <% } %>
+  </head>
+  <body>
+    <header>
+      <h1>Rocon Website</h1>
+    </header>
+    <main></main>
+  </body>
+</html>
