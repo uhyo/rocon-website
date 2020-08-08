@@ -17,6 +17,7 @@ module.exports = (env, argv) => {
     devtool: isDev ? "inline-source-map" : undefined,
     output: {
       path: path.join(__dirname, "dist"),
+      publicPath: "/",
       filename: (chunkData) => {
         if (chunkData.chunk.name === "sw") {
           return "sw.js";
@@ -44,6 +45,7 @@ module.exports = (env, argv) => {
       extensions: [".ts", ".tsx", ".js"],
       alias: {
         "~": path.join(__dirname, "src"),
+        react: path.join(__dirname, "node_modules/react"),
       },
     },
     module: {
@@ -96,7 +98,7 @@ module.exports = (env, argv) => {
       .concat(process.env.ANALYZER ? [new BundleAnalyzerPlugin()] : []),
     devServer: {
       host: "0.0.0.0",
-      hot: true,
+      historyApiFallback: true,
     },
   };
 };
