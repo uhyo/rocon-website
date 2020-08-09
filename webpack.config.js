@@ -78,7 +78,9 @@ module.exports = (env, argv) => {
       }),
       new CopyWebpackPlugin({
         patterns: [
-          "css/new.min.css",
+          "static/new.min.css",
+          "static/prism.min.js",
+          "static/prism.css",
           // {
           //   from: "./src/assets/jigsaw-icon-ts.png",
           //   to: "og-image.png",

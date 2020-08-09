@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { TutorialNavigator } from "~/components/TutorialNavigator";
+import { CodeBlock } from "~/util/CodeBlock";
 
 export const TutorialBasicRouting: React.FC = () => {
   return (
@@ -15,16 +16,14 @@ export const TutorialBasicRouting: React.FC = () => {
         new Path route builder by calling <code>Rocon.Path()</code>, and then
         calls the <code>route</code> method to add routes to it one by one.
       </p>
-      <pre className="language-ts">
-        <code>
-          {`
+      <CodeBlock>
+        {`
 import Rocon from "rocon/react";
 // Alternatively you can choose these ways of importing Rocon
-// import {Rocon} from "rocon/react";
-// import{" "} {Path} from "rocon/react";
+// import { Rocon } from "rocon/react";
+// import { Path } from "rocon/react";
         `}
-        </code>
-      </pre>
+      </CodeBlock>
       <TutorialNavigator />
     </Fragment>
   );
