@@ -20,6 +20,11 @@ export const TutorialNavigator: React.FC = () => {
         <li>
           <Link route={tutorialRoutes._["deep-routes"]}>Deep Routes</Link>
         </li>
+        <li>
+          <Link route={tutorialRoutes._["dynamic-routes"]}>
+            Dynamic Routes and Matching
+          </Link>
+        </li>
       </ol>
     </nav>
   );

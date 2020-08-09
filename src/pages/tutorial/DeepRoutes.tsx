@@ -97,6 +97,13 @@ toplevelRoutes._.foo.attach(fooRoutes);
       </p>
 
       <p>
+        This is the first piece you have encountered of Rocon's ultimate type
+        safety. The <code>_</code> property should only have defined routes in
+        it, namely <code>foo</code> and <code>bar</code> in this case. Accessing{" "}
+        <code>toplevelRoutes._.notdefined</code> should be a type error.
+      </p>
+
+      <p>
         Since a route record's <code>attach</code> method returns what is passed
         as an argument, it allows yet another coding style like this:
       </p>
