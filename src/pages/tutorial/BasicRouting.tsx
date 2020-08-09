@@ -6,7 +6,7 @@ import { ExternalLink } from "~/util/ExternalLink";
 export const TutorialBasicRouting: React.FC = () => {
   return (
     <Fragment>
-      <h2>Basic Routing</h2>
+      <h2>Basic Routing and Rendering</h2>
       <p>
         Routes are defined using <b>route builders</b>. Among those provided by
         Rocon, the most commonly used one is the <b>Path</b> route builder.
@@ -112,9 +112,9 @@ const Routes: React.FC = () => {
       </CodeBlock>
 
       <p>
-        Now, you should see <code>I am foo</code> rendered if you visit{" "}
-        <code>/foo</code>. If you visit <code>/bar</code>, <code>I am bar</code>{" "}
-        should be rendered.
+        Now, you should see <code>This is foo</code> rendered if you visit{" "}
+        <code>/foo</code>. If you visit <code>/bar</code>,{" "}
+        <code>This is bar</code> should be rendered.
       </p>
 
       <TutorialNavigator />
