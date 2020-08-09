@@ -105,7 +105,8 @@ toplevelRoutes._.foo.attach(fooRoutes);
 
       <p>
         Since a route record's <code>attach</code> method returns what is passed
-        as an argument, it allows yet another coding style like this:
+        as an argument, it allows yet another “top-to-bottom” coding style like
+        this:
       </p>
 
       <CodeBlock>
@@ -126,6 +127,10 @@ const fooRoutes = toplevelRoutes._.foo.attach(Rocon.Path())
 
         `}
       </CodeBlock>
+      <p>
+        The last one is most recommended for it gets maximal benefit of type
+        inference.
+      </p>
 
       <TutorialNavigator />
     </Fragment>

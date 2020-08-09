@@ -25,6 +25,9 @@ export const TutorialNavigator: React.FC = () => {
             Dynamic Routes and Matching
           </Link>
         </li>
+        <li>
+          <Link route={tutorialRoutes._.navigation}>Navigation</Link>
+        </li>
       </ol>
     </nav>
   );
