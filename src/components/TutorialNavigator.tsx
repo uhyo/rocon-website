@@ -17,6 +17,9 @@ export const TutorialNavigator: React.FC = () => {
         <li>
           <Link route={tutorialRoutes._["exact-route"]}>Exact Route</Link>
         </li>
+        <li>
+          <Link route={tutorialRoutes._["deep-routes"]}>Deep Routes</Link>
+        </li>
       </ol>
     </nav>
   );
