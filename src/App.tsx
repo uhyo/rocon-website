@@ -1,6 +1,5 @@
 import React from "react";
-import { RoconRoot } from "rocon/lib/react/components/RoconRoot";
-import { useRoutes } from "rocon/react";
+import { RoconRoot, useRoutes } from "rocon/react";
 import { ErrorBoundary } from "./ErrorBoundary";
 import { toplevelRoutes } from "./routes";
 

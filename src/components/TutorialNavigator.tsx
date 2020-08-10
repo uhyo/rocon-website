@@ -43,6 +43,9 @@ export const TutorialNavigator: React.FC = () => {
             Location States
           </Link>
         </li>
+        <li>
+          <Link route={tutorialRoutes._.nested}>Nested Routes</Link>
+        </li>
       </ol>
     </nav>
   );
