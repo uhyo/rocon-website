@@ -44,6 +44,9 @@ export const TutorialNavigator: React.FC = () => {
           </Link>
         </li>
         <li>
+          <Link route={tutorialRoutes._["util-hooks"]}>Utility Hooks</Link>
+        </li>
+        <li>
           <Link route={tutorialRoutes._.nested}>Nested Routes</Link>
         </li>
       </ol>
