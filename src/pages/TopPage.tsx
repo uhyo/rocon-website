@@ -19,6 +19,11 @@ export const TopPage: React.FC = () => {
         <li>
           <Link route={docsRoutes.exactRoute}>Rocon Docs (coming soon)</Link>
         </li>
+        <li>
+          <ExternalLink href="https://github.com/uhyo/rocon-website">
+            GitHub repository for this website (using Rocon)
+          </ExternalLink>
+        </li>
       </ul>
       <hr />
       <p>
