@@ -16,6 +16,15 @@ export const SiteNavigation: React.FC = () => {
             GitHub
           </ExternalLink>
         </li>
+        <li>
+          <ExternalLink href="https://badge.fury.io/js/rocon">
+            <img
+              src="https://badge.fury.io/js/rocon.svg"
+              alt="npm version"
+              height="18"
+            ></img>
+          </ExternalLink>
+        </li>
       </ul>
     </nav>
   );

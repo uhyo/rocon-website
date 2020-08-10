@@ -13,9 +13,20 @@ export const siteNavigationCss = css`
     list-style-type: none;
 
     & > li {
-      box-sizing: border-fox;
+      box-sizing: border-box;
       flex: 20% 0 0;
-      padding-right: 1em;
+      min-width: 14rem;
+      align-self: center;
+      padding: 0 1em;
+
+      &:not(:first-child) {
+        border-left: 1px solid var(--nc-bg-3);
+      }
+
+      img {
+        margin: 0;
+        vertical-align: text-bottom;
+      }
     }
   }
 `;
