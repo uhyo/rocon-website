@@ -1,5 +1,4 @@
 import { css } from "linaria";
-/// <reference types="prismjs" />
 import React, { useEffect, useRef } from "react";
 
 type Props = {
@@ -10,7 +9,7 @@ export const CodeBlock: React.FC<Props> = ({ lang = "ts", children }) => {
   const codeRef = useRef<HTMLElement | null>(null);
   useEffect(() => {
     if (codeRef.current) {
-      window.Prism?.highlightElement(codeRef.current);
+      (window as any).Prism?.highlightElement(codeRef.current);
     }
   }, []);
   return (

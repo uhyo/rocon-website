@@ -1,5 +1,6 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { RoconRoot, useRoutes } from "rocon/react";
+import { SiteNavigation } from "./components/SiteNavigation";
 import { ErrorBoundary } from "./ErrorBoundary";
 import { toplevelRoutes } from "./routes";
 import { ScrollToTop } from "./util/ScrollToTop";
@@ -16,5 +17,11 @@ export const App: React.FC = () => {
 };
 
 const AppInner: React.FC = () => {
-  return useRoutes(toplevelRoutes);
+  const contents = useRoutes(toplevelRoutes);
+  return (
+    <Fragment>
+      <SiteNavigation />
+      {contents}
+    </Fragment>
+  );
 };
