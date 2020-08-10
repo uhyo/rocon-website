@@ -1,3 +1,4 @@
+import { css } from "linaria";
 /// <reference types="prismjs" />
 import React, { useEffect, useRef } from "react";
 
@@ -13,10 +14,18 @@ export const CodeBlock: React.FC<Props> = ({ lang = "ts", children }) => {
     }
   }, []);
   return (
-    <pre>
+    <pre className={codeBlockCss}>
       <code ref={codeRef} className={`line-numbers language-${lang}`}>
         {typeof children === "string" ? children.trim() : children}
       </code>
     </pre>
   );
 };
+
+const codeBlockCss = css`
+  @media (max-width: 450px) {
+    &[class*="language-"] {
+      font-size: 0.8em;
+    }
+  }
+`;

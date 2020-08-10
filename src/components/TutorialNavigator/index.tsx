@@ -1,14 +1,18 @@
 import React from "react";
 import { Link } from "rocon/react";
 import { tutorialRoutes } from "~/routes";
+import { containerCss } from "./styles";
 
 export const TutorialNavigator: React.FC = () => {
   return (
-    <nav>
+    <nav className={containerCss}>
+      <h2>Rocon Tutorial</h2>
+
+      <p>
+        <Link route={tutorialRoutes.exactRoute}>Top</Link>
+      </p>
+      <h3>Basics</h3>
       <ol>
-        <li>
-          <Link route={tutorialRoutes.exactRoute}>Top</Link>
-        </li>
         <li>
           <Link route={tutorialRoutes._["basic-routing"]}>
             Basic Routing and Rendering
@@ -43,6 +47,9 @@ export const TutorialNavigator: React.FC = () => {
             Location States
           </Link>
         </li>
+      </ol>
+      <h3>Advanced</h3>
+      <ol>
         <li>
           <Link route={tutorialRoutes._["util-hooks"]}>Utility Hooks</Link>
         </li>

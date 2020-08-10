@@ -33,6 +33,7 @@ export const tabCss = css`
   font-weight: bold;
 
   &:hover {
+    color: #222222;
     background-color: rgba(0, 0, 0, 0.03);
   }
 `;
