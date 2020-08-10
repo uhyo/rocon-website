@@ -6,7 +6,7 @@ export const TopPage: React.FC = () => {
   return (
     <Fragment>
       <pre>
-        <code>npm install rocon</code>
+        <code>npm install rocon history</code>
       </pre>
       <p>
         Rocon is a router library with <strong>ultimate type safety</strong>.
