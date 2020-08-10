@@ -6,6 +6,7 @@ import { TutorialDynamicRoutes } from "./pages/tutorial/DynamicRoutes";
 import { TutorialExactRoute } from "./pages/tutorial/ExactRoute";
 import { TutorialNavigation } from "./pages/tutorial/Navigation";
 import { TutorialNotFound } from "./pages/tutorial/NotFound";
+import { TutorialQueryParameter } from "./pages/tutorial/QueryParameter";
 import { TutorialTop } from "./pages/tutorial/Top";
 
 export const tutorialRoutes = Rocon.Path()
@@ -17,7 +18,8 @@ export const tutorialRoutes = Rocon.Path()
   .route("deep-routes", (r) => r.action(() => <TutorialDeepRoutes />))
   .route("dynamic-routes", (r) => r.action(() => <TutorialDynamicRoutes />))
   .route("navigation", (r) => r.action(() => <TutorialNavigation />))
-  .route("not-found", (r) => r.action(() => <TutorialNotFound />));
+  .route("not-found", (r) => r.action(() => <TutorialNotFound />))
+  .route("query-parameter", (r) => r.action(() => <TutorialQueryParameter />));
 
 export const toplevelRoutes = Rocon.Path().route("tutorial", (p) =>
   p.attach(tutorialRoutes)

@@ -33,6 +33,11 @@ export const TutorialNavigator: React.FC = () => {
             Handling of Nonexistent Paths
           </Link>
         </li>
+        <li>
+          <Link route={tutorialRoutes._["query-parameter"]}>
+            Query Parameters
+          </Link>
+        </li>
       </ol>
     </nav>
   );
