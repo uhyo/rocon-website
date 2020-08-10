@@ -6,7 +6,7 @@ import { Tabs } from "./Tabs";
 export const TutorialNested: React.FC = () => {
   const tabRoute = useMemo(() => {
     return Rocon.Search("tab", { optional: true }).action(({ tab }) => (
-      <Tabs tab={tab} tabRoute={tabRoute.getRoute()} />
+      <Tabs tab={tab} tabRoute={tabRoute.route} />
     ));
   }, []);
   const tabContent = useRoutes(tabRoute);

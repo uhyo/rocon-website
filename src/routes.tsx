@@ -1,5 +1,7 @@
 import React from "react";
 import { Rocon } from "rocon/react";
+import { DocsTop } from "./pages/docs/Top";
+import { TopPage } from "./pages/TopPage";
 import { TutorialBasicRouting } from "./pages/tutorial/BasicRouting";
 import { TutorialDeepRoutes } from "./pages/tutorial/DeepRoutes";
 import { TutorialDynamicRoutes } from "./pages/tutorial/DynamicRoutes";
@@ -27,6 +29,13 @@ export const tutorialRoutes = Rocon.Path()
   .route("util-hooks", (r) => r.action(() => <TutorialUtilHooks />))
   .route("nested", (r) => r.action(() => <TutorialNested />));
 
-export const toplevelRoutes = Rocon.Path().route("tutorial", (p) =>
-  p.attach(tutorialRoutes)
-);
+export const docsRoutes = Rocon.Path().exact({
+  action: () => <DocsTop />,
+});
+
+export const toplevelRoutes = Rocon.Path()
+  .exact({
+    action: () => <TopPage />,
+  })
+  .route("tutorial", (p) => p.attach(tutorialRoutes))
+  .route("docs", (p) => p.attach(docsRoutes));
