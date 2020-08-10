@@ -28,6 +28,11 @@ export const TutorialNavigator: React.FC = () => {
         <li>
           <Link route={tutorialRoutes._.navigation}>Navigation</Link>
         </li>
+        <li>
+          <Link route={tutorialRoutes._["not-found"]}>
+            Handling of Nonexistent Paths
+          </Link>
+        </li>
       </ol>
     </nav>
   );
