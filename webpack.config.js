@@ -6,6 +6,7 @@ const ManifestPlugin = require("webpack-manifest-plugin");
 // const PwaManifest = require("webpack-pwa-manifest");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin;
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // const WorkboxPlugin = require("workbox-webpack-plugin");
 
 module.exports = (env, argv) => {
@@ -50,7 +51,18 @@ module.exports = (env, argv) => {
     },
     module: {
       rules: [
-        { test: /\.tsx?$/, loader: "ts-loader" },
+        {
+          test: /\.tsx?$/,
+          use: [
+            {
+              loader: "linaria/loader",
+              options: {
+                sourceMap: process.env.NODE_ENV !== "production",
+              },
+            },
+            "ts-loader",
+          ],
+        },
         {
           test: /\.svg$/,
           loader: "url-loader",
@@ -58,9 +70,29 @@ module.exports = (env, argv) => {
             limit: 2048,
           },
         },
+        {
+          test: /\.css$/,
+          use: [
+            {
+              loader: MiniCssExtractPlugin.loader,
+              options: {
+                hmr: process.env.NODE_ENV !== "production",
+              },
+            },
+            {
+              loader: "css-loader",
+              options: {
+                sourceMap: process.env.NODE_ENV !== "production",
+              },
+            },
+          ],
+        },
       ],
     },
     plugins: [
+      new MiniCssExtractPlugin({
+        filename: "styles-[contenthash].css",
+      }),
       new HtmlWebpackPlugin({
         template: "html/index.html",
         excludeChunks: ["sw"],

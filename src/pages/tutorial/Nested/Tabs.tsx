@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { Link, ReactRouteRecord } from "rocon/react";
 import { CodeBlock } from "~/util/CodeBlock";
+import { tabContainerCss, tabCss, tabListCss, tabSelectedCss } from "./styles";
 
 const tabLabels = [
   {
@@ -101,14 +102,15 @@ type Props = {
 export const Tabs: React.FC<Props> = ({ tab, tabRoute }) => {
   const content = (tab && tabs[tab as keyof typeof tabs]) || tabs.tab1;
   return (
-    <section>
+    <section className={tabContainerCss}>
       <nav>
-        {tabLabels.map(({ name, label }) => (
-          <ul key={name} role="tablist">
-            <li role="presentation">
+        <ul role="tablist" className={tabListCss}>
+          {tabLabels.map(({ name, label }) => (
+            <li key={name} role="presentation">
               <Link
                 role="tab"
                 aria-selected={name === tab}
+                className={tabCss + (name === tab ? ` ${tabSelectedCss}` : "")}
                 route={tabRoute}
                 match={{
                   tab: name,
@@ -117,8 +119,8 @@ export const Tabs: React.FC<Props> = ({ tab, tabRoute }) => {
                 {label}
               </Link>
             </li>
-          </ul>
-        ))}
+          ))}
+        </ul>
       </nav>
       <main role="tabpanel">{content()}</main>
     </section>
