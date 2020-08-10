@@ -38,6 +38,11 @@ export const TutorialNavigator: React.FC = () => {
             Query Parameters
           </Link>
         </li>
+        <li>
+          <Link route={tutorialRoutes._["location-state"]}>
+            Location States
+          </Link>
+        </li>
       </ol>
     </nav>
   );

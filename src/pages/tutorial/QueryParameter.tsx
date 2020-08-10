@@ -85,6 +85,33 @@ const fooRoute = toplevelRoutes._.foo
         <code>/foo?yourname=uhyo</code>.
       </p>
 
+      <h3>Navigating to a Route with Query Parameter</h3>
+      <p>
+        Of course, to navigate to a route with query parameters, you have to
+        provide a match object. A route record of a Search path builder is
+        available via its <code>route</code> property.
+      </p>
+      <CodeBlock>
+        {`
+navigate(fooRoute.route, { name: "Pikachu" });
+        `}
+      </CodeBlock>
+
+      <h3>Multiple Query Parameters</h3>
+      <p>
+        One Search route builder supports only one query parameter. To define
+        more than one query parameter for the same route, attach another Search
+        route builder to that route.
+      </p>
+      <CodeBlock>
+        {`
+const fooRoute = toplevelRoutes._.foo
+  .attach(Rocon.Search("name", { searchKey: "yourname" }))
+  .attach(Rocon.Search("age", { optional: true }))
+  .action(({ name, age }) => <p>This is foo, your name is {name} and your age is {age}</p>);
+        `}
+      </CodeBlock>
+
       <TutorialNavigator />
     </Fragment>
   );
