@@ -2,6 +2,7 @@ import React from "react";
 import { Rocon } from "rocon/react";
 import { DocsBuilderPath } from "./pages/docs/builder/Path";
 import { DocsBuilderSearch } from "./pages/docs/builder/Search";
+import { DocsBuilderState } from "./pages/docs/builder/State";
 import { DocsTop } from "./pages/docs/Top";
 import { TopPage } from "./pages/TopPage";
 import { TutorialBasicRouting } from "./pages/tutorial/BasicRouting";
@@ -43,7 +44,8 @@ export const docsRoutes = Rocon.Path()
 export const docsBuilderRoutes = docsRoutes._.builder
   .attach(Rocon.Path())
   .route("path", (r) => r.action(() => <DocsBuilderPath />))
-  .route("search", (r) => r.action(() => <DocsBuilderSearch />));
+  .route("search", (r) => r.action(() => <DocsBuilderSearch />))
+  .route("state", (r) => r.action(() => <DocsBuilderState />));
 
 export const toplevelRoutes = Rocon.Path()
   .exact({

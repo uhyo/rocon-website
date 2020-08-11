@@ -74,6 +74,15 @@ const builder2 = Rocon.Search("fooValue", {
 });
 `}</CodeBlock>
 
+      <h4>Example 2</h4>
+      <CodeBlock>{`
+// Attach a Search route builder to a Path route builder
+// to create a route for /foo?key=value
+const builder = Rocon.Path()
+  .route("foo")
+  ._.foo.attach(Rocon.Search("key"));
+`}</CodeBlock>
+
       <h3>builder.action(func)</h3>
       <CodeBlock>{`
 action(
