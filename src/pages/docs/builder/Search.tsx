@@ -20,8 +20,8 @@ type SearchRouteBuilder<
       <p>
         The <b>Search</b> route builder is a route builder that defines one
         search query param (<code>?key=value</code> pair). By attaching to
-        another route, it defines a new route that requires a search query
-        param.
+        another route, it can define a new route with a search query param
+        added.
       </p>
       <p>
         A Search route builder always holds one route record that represents a
@@ -113,7 +113,7 @@ const foobarRoute = Rocon.Search("foo")
       `}</CodeBlock>
 
       <h3>builder.route</h3>
-      <p>The only route record defined by this Search route builder.</p>
+      <p>The route record defined by this Search route builder.</p>
       <DocsNavigator />
     </DocsArticle>
   );
