@@ -25,7 +25,11 @@ type PathRouteBuilder<
       </p>
 
       <h3>Initiaization</h3>
-      <CodeBlock>Rocon.Path()</CodeBlock>
+      <CodeBlock>{`Rocon.Path(): PathRouteBuilder<...>`}</CodeBlock>
+      <p>
+        Creates a new instance of Path route builder. It has no routes defined
+        at first.
+      </p>
 
       <h3>builder.route(key, callback?)</h3>
       <CodeBlock>{`
@@ -43,7 +47,7 @@ route<Key extends string>(
       <h4>Example</h4>
       <CodeBlock>{`
 // create a Path route builder with /foo and /bar 
-const foobarRoutes = Path.init()
+const foobarRoutes = Rocon.Path()
   .route("foo", (r) => r.action(()=> <p>I am foo</p>))
   .route("bar", (r) => r.action(()=> <p>I am bar</p>));
       `}</CodeBlock>
@@ -62,7 +66,7 @@ routes<D extends RoutesDefinition<ActionResult>>(
       <h4>Example</h4>
       <CodeBlock>{`
 // create a Path route builder with /foo and /bar 
-const foobarRoutes = Path.init()
+const foobarRoutes = Rocon.Path()
   .routes({
     foo: {
       action: ()=> <p>I am foo</p>
@@ -87,7 +91,7 @@ exact<RD extends RouteDefinition<...>>(
       <h4>Example</h4>
       <CodeBlock>{`
 // create a Path route builder with / and /foo 
-const fooRoutes = Path.init()
+const fooRoutes = Rocon.Path()
   .exact({
     action: () => <p>I am root</p>
   })
@@ -112,7 +116,7 @@ any<Key extends string, RD extends RouteDefinition<...>>(
       <CodeBlock>{`
 // Create a Path route builder that catches any path.
 // By accessing /foobar you see "You visited /foobar"
-const catchAllRoutes = Path.init()
+const catchAllRoutes = Rocon.Path()
   .any("pathId", {
     action: ({ pathId }) => <p>You visited /{pathId} </p>
   })
@@ -126,7 +130,7 @@ const catchAllRoutes = Path.init()
 
       <h4>Example</h4>
       <CodeBlock>{`
-const foobarRoutes = Path.init()
+const foobarRoutes = Rocon.Path()
   .routes({
     foo: {
       action: ()=> <p>I am foo</p>

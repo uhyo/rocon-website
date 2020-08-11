@@ -16,6 +16,9 @@ export const DocsNavigator: React.FC = () => {
         <li>
           <Link route={docsBuilderRoutes._.path}>PathRouteBuilder</Link>
         </li>
+        <li>
+          <Link route={docsBuilderRoutes._.search}>SearchRouteBuilder</Link>
+        </li>
       </ul>
     </nav>
   );
