@@ -1,6 +1,11 @@
 import React from "react";
 import { Link } from "rocon/react";
-import { docsBuilderRoutes, docsRoutes } from "~/routes";
+import {
+  docsBuilderRoutes,
+  docsComponentRoutes,
+  docsHookRoutes,
+  docsRoutes,
+} from "~/routes";
 import { containerCss } from "./styles";
 
 export const DocsNavigator: React.FC = () => {
@@ -29,6 +34,29 @@ export const DocsNavigator: React.FC = () => {
           <Link route={docsBuilderRoutes._.pathSingleRouteInterface}>
             PathSingleRouteInferface
           </Link>
+        </li>
+      </ul>
+
+      <h3>Hooks</h3>
+      <ul>
+        <li>
+          <Link route={docsHookRoutes._.useRoutes}>useRoutes</Link>
+        </li>
+        <li>
+          <Link route={docsHookRoutes._.useHistory}>useHistory</Link>
+        </li>
+        <li>
+          <Link route={docsHookRoutes._.useLocation}>useLocation</Link>
+        </li>
+        <li>
+          <Link route={docsHookRoutes._.useNavigate}>useNavigate</Link>
+        </li>
+      </ul>
+
+      <h3>Components</h3>
+      <ul>
+        <li>
+          <Link route={docsComponentRoutes._.roconRoot}>RoconRoot</Link>
         </li>
       </ul>
     </nav>

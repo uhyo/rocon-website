@@ -5,6 +5,11 @@ import { DocsBuilderPathSingleRouteInterface } from "./pages/docs/builder/PathSi
 import { DocsBuilderRoot } from "./pages/docs/builder/Root";
 import { DocsBuilderSearch } from "./pages/docs/builder/Search";
 import { DocsBuilderState } from "./pages/docs/builder/State";
+import { DocsComponentRoconRoot } from "./pages/docs/component/RoconRoot";
+import { DocsHookUseHistory } from "./pages/docs/hook/UseHistory";
+import { DocsHookUseLocation } from "./pages/docs/hook/UseLocation";
+import { DocsHookUseNavigate } from "./pages/docs/hook/UseNavigate";
+import { DocsHookUseRoutes } from "./pages/docs/hook/UseRoutes";
 import { DocsTop } from "./pages/docs/Top";
 import { TopPage } from "./pages/TopPage";
 import { TutorialBasicRouting } from "./pages/tutorial/BasicRouting";
@@ -40,7 +45,9 @@ export const docsRoutes = Rocon.Path()
   .exact({
     action: () => <DocsTop />,
   })
-  .route("builder");
+  .route("builder")
+  .route("hook")
+  .route("component");
 
 // /docs/builder
 export const docsBuilderRoutes = docsRoutes._.builder
@@ -52,6 +59,19 @@ export const docsBuilderRoutes = docsRoutes._.builder
   .route("pathSingleRouteInterface", (r) =>
     r.action(() => <DocsBuilderPathSingleRouteInterface />)
   );
+
+// /docs/hook
+export const docsHookRoutes = docsRoutes._.hook
+  .attach(Rocon.Path())
+  .route("useRoutes", (r) => r.action(() => <DocsHookUseRoutes />))
+  .route("useHistory", (r) => r.action(() => <DocsHookUseHistory />))
+  .route("useLocation", (r) => r.action(() => <DocsHookUseLocation />))
+  .route("useNavigate", (r) => r.action(() => <DocsHookUseNavigate />));
+
+// /docs/component
+export const docsComponentRoutes = docsRoutes._.component
+  .attach(Rocon.Path())
+  .route("roconRoot", (r) => r.action(() => <DocsComponentRoconRoot />));
 
 export const toplevelRoutes = Rocon.Path()
   .exact({
