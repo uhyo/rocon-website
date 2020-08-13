@@ -1,5 +1,7 @@
 import React from "react";
+import { Link } from "rocon/react";
 import { DocsNavigator } from "~/components/DocsNavigator";
+import { docsBuilderRoutes } from "~/routes";
 import { CodeBlock } from "~/util/CodeBlock";
 import { DocsArticle } from "../DocsArticle";
 
@@ -24,14 +26,14 @@ type PathRouteBuilder<
         of pathname segments.
       </p>
 
-      <h3>Initiaization</h3>
+      <h3 id="initialization">Initiaization</h3>
       <CodeBlock>{`Rocon.Path(): PathRouteBuilder<...>`}</CodeBlock>
       <p>
         Creates a new instance of Path route builder. It has no routes defined
         at first.
       </p>
 
-      <h3>builder.route(key, callback?)</h3>
+      <h3 id="route">builder.route(key, callback?)</h3>
       <CodeBlock>{`
 route<Key extends string>(
   key: string,
@@ -40,8 +42,13 @@ route<Key extends string>(
       `}</CodeBlock>
       <p>
         Returns a new Path route builder with a new route for <code>key</code>{" "}
-        added. By providing a <code>callback</code> function, one can add an
-        action or attach another route builder to the newly added route.
+        added. A{" "}
+        <Link route={docsBuilderRoutes._.pathSingleRouteInterface}>
+          PathSingleRouteInterface
+        </Link>
+        object is passed to the <code>callback</code> function (if any). By
+        providing a <code>callback</code> function, one can add an action or
+        attach another route builder to the newly added route.
       </p>
 
       <h4>Example</h4>
@@ -52,7 +59,7 @@ const foobarRoutes = Rocon.Path()
   .route("bar", (r) => r.action(()=> <p>I am bar</p>));
       `}</CodeBlock>
 
-      <h3>builder.routes(defs)</h3>
+      <h3 id="routes">builder.routes(defs)</h3>
       <CodeBlock>{`
 routes<D extends RoutesDefinition<ActionResult>>(
   defs: D
@@ -77,7 +84,7 @@ const foobarRoutes = Rocon.Path()
   });
       `}</CodeBlock>
 
-      <h3>builder.exact(routeDefinition)</h3>
+      <h3 id="exact">builder.exact(routeDefinition)</h3>
       <CodeBlock>{`
 exact<RD extends RouteDefinition<...>>(
   routeDefinition: RD
@@ -98,7 +105,7 @@ const fooRoutes = Rocon.Path()
   .route("foo", (r) => r.action(()=> <p>I am foo</p>))
       `}</CodeBlock>
 
-      <h3>builder.any(routeDefinition)</h3>
+      <h3 id="any">builder.any(routeDefinition)</h3>
       <CodeBlock>{`
 any<Key extends string, RD extends RouteDefinition<...>>(
   key: Key,
@@ -122,7 +129,7 @@ const catchAllRoutes = Rocon.Path()
   })
       `}</CodeBlock>
 
-      <h3>builder._</h3>
+      <h3 id="underbar">builder._</h3>
       <p>
         The collection of all named route records defined in this Path route
         builder.
@@ -144,13 +151,13 @@ console.log(foobarRoutes._.foo);
 foobarRoutes._.bar.attach(...);
       `}</CodeBlock>
 
-      <h3>builder.exactRoute</h3>
+      <h3 id="exactroute">builder.exactRoute</h3>
       <p>
         Route record for an exact route defined in this route.
         <code>undefined</code> if no exact route is defined.
       </p>
 
-      <h3>builder.anyRoute</h3>
+      <h3 id="anyroute">builder.anyRoute</h3>
       <p>
         Route record for an any route defined in this route.
         <code>undefined</code> if no any route is defined.

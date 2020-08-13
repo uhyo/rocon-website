@@ -25,6 +25,11 @@ export const DocsNavigator: React.FC = () => {
         <li>
           <Link route={docsBuilderRoutes._.root}>RootRouteBuilder</Link>
         </li>
+        <li>
+          <Link route={docsBuilderRoutes._.pathSingleRouteInterface}>
+            PathSingleRouteInferface
+          </Link>
+        </li>
       </ul>
     </nav>
   );
