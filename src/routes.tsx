@@ -5,6 +5,7 @@ import { DocsBuilderPathSingleRouteInterface } from "./pages/docs/builder/PathSi
 import { DocsBuilderRoot } from "./pages/docs/builder/Root";
 import { DocsBuilderSearch } from "./pages/docs/builder/Search";
 import { DocsBuilderState } from "./pages/docs/builder/State";
+import { DocsComponentLink } from "./pages/docs/component/Link";
 import { DocsComponentRoconRoot } from "./pages/docs/component/RoconRoot";
 import { DocsHookUseHistory } from "./pages/docs/hook/UseHistory";
 import { DocsHookUseLocation } from "./pages/docs/hook/UseLocation";
@@ -71,7 +72,8 @@ export const docsHookRoutes = docsRoutes._.hook
 // /docs/component
 export const docsComponentRoutes = docsRoutes._.component
   .attach(Rocon.Path())
-  .route("roconRoot", (r) => r.action(() => <DocsComponentRoconRoot />));
+  .route("roconRoot", (r) => r.action(() => <DocsComponentRoconRoot />))
+  .route("link", (r) => r.action(() => <DocsComponentLink />));
 
 export const toplevelRoutes = Rocon.Path()
   .exact({

@@ -50,23 +50,23 @@ const toplevelRoutes = Rocon.Path()
     },
   });
 
-  const FooPage: React.FC = () => {
-    const navigate = useNavigate();
-    return (
-      <button onClick={() => {
-        navigate(toplevelRoutes._.bar);
-        // or:
-        // navigate.push(toplevelRoutes._.bar);
-        // navigate.replace(toplevelRoutes._.bar);
-      }}>
-        Go to bar
-      </button>
-    );
-  };
-  
-  const BarPage: React.FC = () => {
-    return (<p>This is bar</p>);
-  };
+const FooPage: React.FC = () => {
+  const navigate = useNavigate();
+  return (
+    <button onClick={() => {
+      navigate(toplevelRoutes._.bar);
+      // or:
+      // navigate.push(toplevelRoutes._.bar);
+      // navigate.replace(toplevelRoutes._.bar);
+    }}>
+      Go to bar
+    </button>
+  );
+};
+
+const BarPage: React.FC = () => {
+  return (<p>This is bar</p>);
+};
       `}</CodeBlock>
 
       <h3>Example 2</h3>
@@ -83,20 +83,20 @@ const barRoute = toplevelRoutes._.bar
   .attach(Rocon.Search("key"))
   .action(({ key }) => <BarPage key={key} />);
 
-  const FooPage: React.FC = () => {
-    const navigate = useNavigate();
-    return (
-      <button onClick={() => {
-        navigate(barRoute, { key: "value" });
-      }}>
-        Go to bar
-      </button>
-    );
-  };
-  
-  const BarPage: React.FC<{ key: string }> = ({ key }) => {
-    return (<p>This is bar. key is {key}</p>);
-  };
+const FooPage: React.FC = () => {
+  const navigate = useNavigate();
+  return (
+    <button onClick={() => {
+      navigate(barRoute, { key: "value" });
+    }}>
+      Go to bar
+    </button>
+  );
+};
+
+const BarPage: React.FC<{ key: string }> = ({ key }) => {
+  return (<p>This is bar. key is {key}</p>);
+};
       `}</CodeBlock>
       <DocsNavigator />
     </DocsArticle>

@@ -58,6 +58,9 @@ export const DocsNavigator: React.FC = () => {
         <li>
           <Link route={docsComponentRoutes._.roconRoot}>RoconRoot</Link>
         </li>
+        <li>
+          <Link route={docsComponentRoutes._.link}>Link</Link>
+        </li>
       </ul>
     </nav>
   );
