@@ -13,6 +13,8 @@ import { DocsHookUseRoutes } from "./pages/docs/hook/UseRoutes";
 import { DocsTop } from "./pages/docs/Top";
 import { DocsTypePathSingleRouteInterface } from "./pages/docs/type/PathSingleRouteInferface";
 import { DocsTypeReactRouteRecord } from "./pages/docs/type/ReactRouteRecord";
+import { DocsUtilIsLocationNotFoundError } from "./pages/docs/util/isLocationNotFoundError";
+import { DocsUtilLocationNotFoundError } from "./pages/docs/util/LocationNotFoundError";
 import { TopPage } from "./pages/TopPage";
 import { TutorialBasicRouting } from "./pages/tutorial/BasicRouting";
 import { TutorialDeepRoutes } from "./pages/tutorial/DeepRoutes";
@@ -50,7 +52,8 @@ export const docsRoutes = Rocon.Path()
   .route("builder")
   .route("hook")
   .route("component")
-  .route("type");
+  .route("type")
+  .route("util");
 
 // /docs/builder
 export const docsBuilderRoutes = docsRoutes._.builder
@@ -82,6 +85,16 @@ export const docsTypeRoutes = docsRoutes._.type
   )
   .route("pathSingleRouteInterface", (r) =>
     r.action(() => <DocsTypePathSingleRouteInterface />)
+  );
+
+// /docs/util
+export const docsUtilRoutes = docsRoutes._.util
+  .attach(Rocon.Path())
+  .route("locationNotFoundError", (r) =>
+    r.action(() => <DocsUtilLocationNotFoundError />)
+  )
+  .route("isLocationNotFoundError", (r) =>
+    r.action(() => <DocsUtilIsLocationNotFoundError />)
   );
 
 export const toplevelRoutes = Rocon.Path()

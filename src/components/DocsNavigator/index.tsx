@@ -6,6 +6,7 @@ import {
   docsHookRoutes,
   docsRoutes,
   docsTypeRoutes,
+  docsUtilRoutes,
 } from "~/routes";
 import { containerCss } from "./styles";
 
@@ -69,6 +70,20 @@ export const DocsNavigator: React.FC = memo(() => {
         <li>
           <Link route={docsTypeRoutes._.pathSingleRouteInterface}>
             PathSingleRouteInferface
+          </Link>
+        </li>
+      </ul>
+
+      <h3>Utils</h3>
+      <ul>
+        <li>
+          <Link route={docsUtilRoutes._.locationNotFoundError}>
+            LocationNotFoundError
+          </Link>
+        </li>
+        <li>
+          <Link route={docsUtilRoutes._.isLocationNotFoundError}>
+            isLocationNotFoundError
           </Link>
         </li>
       </ul>
