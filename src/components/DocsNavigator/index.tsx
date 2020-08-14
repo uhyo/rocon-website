@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "rocon/react";
 import {
   docsBuilderRoutes,
@@ -9,7 +9,7 @@ import {
 } from "~/routes";
 import { containerCss } from "./styles";
 
-export const DocsNavigator: React.FC = () => {
+export const DocsNavigator: React.FC = memo(() => {
   return (
     <nav className={containerCss}>
       <h2>Rocon Documentation</h2>
@@ -62,6 +62,11 @@ export const DocsNavigator: React.FC = () => {
       <h3>Types</h3>
       <ul>
         <li>
+          <Link route={docsTypeRoutes._.reactRouteRecord}>
+            ReactRouteRecord
+          </Link>
+        </li>
+        <li>
           <Link route={docsTypeRoutes._.pathSingleRouteInterface}>
             PathSingleRouteInferface
           </Link>
@@ -69,4 +74,4 @@ export const DocsNavigator: React.FC = () => {
       </ul>
     </nav>
   );
-};
+});

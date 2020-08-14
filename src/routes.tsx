@@ -12,6 +12,7 @@ import { DocsHookUseNavigate } from "./pages/docs/hook/UseNavigate";
 import { DocsHookUseRoutes } from "./pages/docs/hook/UseRoutes";
 import { DocsTop } from "./pages/docs/Top";
 import { DocsTypePathSingleRouteInterface } from "./pages/docs/type/PathSingleRouteInferface";
+import { DocsTypeReactRouteRecord } from "./pages/docs/type/ReactRouteRecord";
 import { TopPage } from "./pages/TopPage";
 import { TutorialBasicRouting } from "./pages/tutorial/BasicRouting";
 import { TutorialDeepRoutes } from "./pages/tutorial/DeepRoutes";
@@ -76,6 +77,9 @@ export const docsComponentRoutes = docsRoutes._.component
 // /docs/type
 export const docsTypeRoutes = docsRoutes._.type
   .attach(Rocon.Path())
+  .route("reactRouteRecord", (r) =>
+    r.action(() => <DocsTypeReactRouteRecord />)
+  )
   .route("pathSingleRouteInterface", (r) =>
     r.action(() => <DocsTypePathSingleRouteInterface />)
   );
