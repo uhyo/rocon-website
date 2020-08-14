@@ -1,7 +1,6 @@
 import React from "react";
 import { Rocon } from "rocon/react";
 import { DocsBuilderPath } from "./pages/docs/builder/Path";
-import { DocsBuilderPathSingleRouteInterface } from "./pages/docs/builder/PathSingleRouteInferface";
 import { DocsBuilderRoot } from "./pages/docs/builder/Root";
 import { DocsBuilderSearch } from "./pages/docs/builder/Search";
 import { DocsBuilderState } from "./pages/docs/builder/State";
@@ -12,6 +11,7 @@ import { DocsHookUseLocation } from "./pages/docs/hook/UseLocation";
 import { DocsHookUseNavigate } from "./pages/docs/hook/UseNavigate";
 import { DocsHookUseRoutes } from "./pages/docs/hook/UseRoutes";
 import { DocsTop } from "./pages/docs/Top";
+import { DocsTypePathSingleRouteInterface } from "./pages/docs/type/PathSingleRouteInferface";
 import { TopPage } from "./pages/TopPage";
 import { TutorialBasicRouting } from "./pages/tutorial/BasicRouting";
 import { TutorialDeepRoutes } from "./pages/tutorial/DeepRoutes";
@@ -48,7 +48,8 @@ export const docsRoutes = Rocon.Path()
   })
   .route("builder")
   .route("hook")
-  .route("component");
+  .route("component")
+  .route("type");
 
 // /docs/builder
 export const docsBuilderRoutes = docsRoutes._.builder
@@ -56,10 +57,7 @@ export const docsBuilderRoutes = docsRoutes._.builder
   .route("path", (r) => r.action(() => <DocsBuilderPath />))
   .route("search", (r) => r.action(() => <DocsBuilderSearch />))
   .route("state", (r) => r.action(() => <DocsBuilderState />))
-  .route("root", (r) => r.action(() => <DocsBuilderRoot />))
-  .route("pathSingleRouteInterface", (r) =>
-    r.action(() => <DocsBuilderPathSingleRouteInterface />)
-  );
+  .route("root", (r) => r.action(() => <DocsBuilderRoot />));
 
 // /docs/hook
 export const docsHookRoutes = docsRoutes._.hook
@@ -74,6 +72,13 @@ export const docsComponentRoutes = docsRoutes._.component
   .attach(Rocon.Path())
   .route("roconRoot", (r) => r.action(() => <DocsComponentRoconRoot />))
   .route("link", (r) => r.action(() => <DocsComponentLink />));
+
+// /docs/type
+export const docsTypeRoutes = docsRoutes._.type
+  .attach(Rocon.Path())
+  .route("pathSingleRouteInterface", (r) =>
+    r.action(() => <DocsTypePathSingleRouteInterface />)
+  );
 
 export const toplevelRoutes = Rocon.Path()
   .exact({

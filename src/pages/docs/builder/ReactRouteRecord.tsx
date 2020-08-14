@@ -5,7 +5,7 @@ import { docsBuilderRoutes } from "~/routes";
 import { CodeBlock } from "~/util/CodeBlock";
 import { DocsArticle } from "../DocsArticle";
 
-export const DocsBuilderPathSingleRouteInterface: React.FC = () => {
+export const DocsTypePathSingleRouteInterface: React.FC = () => {
   return (
     <DocsArticle>
       <h2>PathSingleRouteInterface</h2>

@@ -5,6 +5,7 @@ import {
   docsComponentRoutes,
   docsHookRoutes,
   docsRoutes,
+  docsTypeRoutes,
 } from "~/routes";
 import { containerCss } from "./styles";
 
@@ -29,11 +30,6 @@ export const DocsNavigator: React.FC = () => {
         </li>
         <li>
           <Link route={docsBuilderRoutes._.root}>RootRouteBuilder</Link>
-        </li>
-        <li>
-          <Link route={docsBuilderRoutes._.pathSingleRouteInterface}>
-            PathSingleRouteInferface
-          </Link>
         </li>
       </ul>
 
@@ -60,6 +56,15 @@ export const DocsNavigator: React.FC = () => {
         </li>
         <li>
           <Link route={docsComponentRoutes._.link}>Link</Link>
+        </li>
+      </ul>
+
+      <h3>Types</h3>
+      <ul>
+        <li>
+          <Link route={docsTypeRoutes._.pathSingleRouteInterface}>
+            PathSingleRouteInferface
+          </Link>
         </li>
       </ul>
     </nav>

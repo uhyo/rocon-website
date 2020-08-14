@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "rocon/react";
 import { DocsNavigator } from "~/components/DocsNavigator";
-import { docsBuilderRoutes } from "~/routes";
+import { docsTypeRoutes } from "~/routes";
 import { CodeBlock } from "~/util/CodeBlock";
 import { DocsArticle } from "../DocsArticle";
 
@@ -43,7 +43,7 @@ route<Key extends string>(
       <p>
         Returns a new Path route builder with a new route for <code>key</code>{" "}
         added. A{" "}
-        <Link route={docsBuilderRoutes._.pathSingleRouteInterface}>
+        <Link route={docsTypeRoutes._.pathSingleRouteInterface}>
           PathSingleRouteInterface
         </Link>
         object is passed to the <code>callback</code> function (if any). By
