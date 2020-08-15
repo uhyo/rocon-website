@@ -45,7 +45,8 @@ export const tutorialRoutes = Rocon.Path()
   .route("nested", (r) => r.action(() => <TutorialNested />));
 
 // /docs
-export const docsRoutes = Rocon.Path()
+export const docsRoutes = Rocon.SingleHash("hash", { optional: true })
+  .attach(Rocon.Path())
   .exact({
     action: () => <DocsTop />,
   })
