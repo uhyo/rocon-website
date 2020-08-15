@@ -30,6 +30,11 @@ export const DocsNavigator: React.FC = memo(() => {
           <Link route={docsBuilderRoutes._.state}>StateRouteBuilder</Link>
         </li>
         <li>
+          <Link route={docsBuilderRoutes._.singleHash}>
+            SingleHashRouteBuilder
+          </Link>
+        </li>
+        <li>
           <Link route={docsBuilderRoutes._.root}>RootRouteBuilder</Link>
         </li>
       </ul>

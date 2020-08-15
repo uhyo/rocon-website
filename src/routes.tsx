@@ -3,6 +3,7 @@ import { Rocon } from "rocon/react";
 import { DocsBuilderPath } from "./pages/docs/builder/Path";
 import { DocsBuilderRoot } from "./pages/docs/builder/Root";
 import { DocsBuilderSearch } from "./pages/docs/builder/Search";
+import { DocsBuilderSingleHash } from "./pages/docs/builder/SingleHash";
 import { DocsBuilderState } from "./pages/docs/builder/State";
 import { DocsComponentLink } from "./pages/docs/component/Link";
 import { DocsComponentRoconRoot } from "./pages/docs/component/RoconRoot";
@@ -62,6 +63,7 @@ export const docsBuilderRoutes = docsRoutes._.builder
   .route("path", (r) => r.action(() => <DocsBuilderPath />))
   .route("search", (r) => r.action(() => <DocsBuilderSearch />))
   .route("state", (r) => r.action(() => <DocsBuilderState />))
+  .route("singleHash", (r) => r.action(() => <DocsBuilderSingleHash />))
   .route("root", (r) => r.action(() => <DocsBuilderRoot />));
 
 // /docs/hook
