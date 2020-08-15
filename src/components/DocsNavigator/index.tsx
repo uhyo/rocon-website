@@ -18,6 +18,9 @@ export const DocsNavigator: React.FC = memo(() => {
       <p>
         <Link route={docsRoutes.exactRoute}>Top</Link>
       </p>
+      <p>
+        <Link route={docsRoutes._.concepts}>Concepts</Link>
+      </p>
       <h3>Route Builders</h3>
       <ul>
         <li>

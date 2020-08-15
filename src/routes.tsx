@@ -7,6 +7,7 @@ import { DocsBuilderSingleHash } from "./pages/docs/builder/SingleHash";
 import { DocsBuilderState } from "./pages/docs/builder/State";
 import { DocsComponentLink } from "./pages/docs/component/Link";
 import { DocsComponentRoconRoot } from "./pages/docs/component/RoconRoot";
+import { DocsConcepts } from "./pages/docs/Concepts";
 import { DocsHookUseHistory } from "./pages/docs/hook/UseHistory";
 import { DocsHookUseLocation } from "./pages/docs/hook/UseLocation";
 import { DocsHookUseNavigate } from "./pages/docs/hook/UseNavigate";
@@ -51,6 +52,7 @@ export const docsRoutes = Rocon.SingleHash("hash", { optional: true })
   .exact({
     action: () => <DocsTop />,
   })
+  .route("concepts", (r) => r.action(() => <DocsConcepts />))
   .route("builder")
   .route("hook")
   .route("component")
