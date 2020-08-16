@@ -1,6 +1,7 @@
 import React from "react";
 import { DocsNavigator } from "~/components/DocsNavigator";
 import { CodeBlock } from "~/util/CodeBlock";
+import { ConceptsLink } from "~/util/ConceptLink";
 import { DocsArticle } from "../DocsArticle";
 
 export const DocsBuilderState: React.FC = () => {
@@ -19,17 +20,18 @@ type StateRouteBuilder<
         `}
       </CodeBlock>
       <p>
-        The <b>State</b> route builder is a route builder that defines one key
-        in the <code>location.state</code> object. By attaching to another
-        route, it can define a new route with a <code>location.state</code> key
-        added.
+        The <b>State</b>{" "}
+        <ConceptsLink hash="route-builders">route builder</ConceptsLink> is a
+        route builder that defines one key in the <code>location.state</code>{" "}
+        object. By attaching to another route, it can define a new route with a{" "}
+        <code>location.state</code> key added.
       </p>
       <p>
         A State route builder always holds one route record that represents a
         route with the specified <code>location.state</code> key.
       </p>
 
-      <h3>Initiaization</h3>
+      <h3 id="initialization">Initiaization</h3>
       <CodeBlock>{`
 Rocon.State<Key extends string, StateValue, IsOptional extends boolean>(
   matchKey: Key,
@@ -45,13 +47,14 @@ type StateRouteBuilderOptions<IsOptional extends boolean> = {
 `}</CodeBlock>
       <p>
         Creates a new instance of State route builder. It has one route defined
-        from first, but it has no action. To define a route with action, use the{" "}
-        <code>action</code> method.
+        from first which has no action at first. To define a route with action,
+        use the <code>action</code> method.
       </p>
       <ul>
         <li>
           <code>matchKey</code>: Match key with which the value of{" "}
-          <code>location.state</code> field is saved in the match object.
+          <code>location.state</code> field is saved in the{" "}
+          <ConceptsLink hash="match-objects">match object</ConceptsLink>.
         </li>
         <li>
           <code>validator</code>: Runtime validation function that validates
@@ -76,7 +79,7 @@ const isString: (value: unknown): value is string => typeof value === "string";
 const builder = Rocon.State("foo", isString);
 `}</CodeBlock>
 
-      <h3>builder.action(func)</h3>
+      <h3 id="action">builder.action(func)</h3>
       <CodeBlock>{`
 action(
   action: ActionType<ActionResult, Match>
@@ -93,7 +96,7 @@ const fooStateRoute = Rocon.State("foo")
   .action(({ foo }) => <p>The value of foo in location.state is {foo}</p>);
       `}</CodeBlock>
 
-      <h3>builder.attach(otherBuilder)</h3>
+      <h3 id="attach">builder.attach(otherBuilder)</h3>
       <CodeBlock>{`
 attach: AttachFunction<ActionResult, Match>
       `}</CodeBlock>
@@ -112,8 +115,11 @@ const foobarRoute = Rocon.State("foo", isString)
   .action(({ foo, bar }) => <p>Foo is {foo} and bar is {bar}</p>);
       `}</CodeBlock>
 
-      <h3>builder.route</h3>
-      <p>The route record defined by this State route builder.</p>
+      <h3 id="route">builder.route</h3>
+      <p>
+        The <ConceptsLink hash="route-records">route record</ConceptsLink>{" "}
+        defined by this State route builder.
+      </p>
       <DocsNavigator />
     </DocsArticle>
   );

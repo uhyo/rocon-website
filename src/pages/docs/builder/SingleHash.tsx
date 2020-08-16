@@ -1,6 +1,7 @@
 import React from "react";
 import { DocsNavigator } from "~/components/DocsNavigator";
 import { CodeBlock } from "~/util/CodeBlock";
+import { ConceptsLink } from "~/util/ConceptLink";
 import { DocsArticle } from "../DocsArticle";
 
 export const DocsBuilderSingleHash: React.FC = () => {
@@ -18,8 +19,10 @@ type SingleHashRouteBuilder<
         `}
       </CodeBlock>
       <p>
-        The <b>Single Hash</b> route builder is a route builder that represents
-        the whole hash part (<code>#id</code>) of a URL as a single string.
+        The <b>Single Hash</b>{" "}
+        <ConceptsLink hash="route-builders">route builder</ConceptsLink> is a
+        route builder that represents the whole hash part (<code>#id</code>) of
+        a URL as a single string.
       </p>
       <p>
         A Single Hash route builder always holds one route record that
@@ -45,7 +48,7 @@ type SingleHashRouteBuilderOptions<IsOptional extends boolean> = {
       <ul>
         <li>
           <code>matchKey</code>: Match key with which the hash string is saved
-          in the match object.
+          in the <ConceptsLink hash="match-objects">match object</ConceptsLink>.
         </li>
         <li>
           <code>optional</code>: If <code>true</code>, this Single Hash route
@@ -71,7 +74,7 @@ const navigate = useNavigate();
 navigate(fooRoute, { hash: "id" });
 `}</CodeBlock>
 
-      <h3>builder.action(func)</h3>
+      <h3 id="action">builder.action(func)</h3>
       <CodeBlock>{`
 action(
   action: ActionType<ActionResult, Match>
@@ -90,7 +93,7 @@ const toplevel = Rocon.SingleHash("hash")
   .action(({ hash }) => <p>The hash string is {hash}</p>);
       `}</CodeBlock>
 
-      <h3>builder.attach(otherBuilder)</h3>
+      <h3 id="attach">builder.attach(otherBuilder)</h3>
       <CodeBlock>{`
 attach: AttachFunction<ActionResult, Match>
       `}</CodeBlock>
@@ -109,8 +112,11 @@ const toplevel = Rocon.SingleHash("hash")
   .route("foo", (r) => r.action(({ hash }) => <p>Hash string is {hash}</p>));
       `}</CodeBlock>
 
-      <h3>builder.route</h3>
-      <p>The route record defined by this Single Hash route builder.</p>
+      <h3 id="route">builder.route</h3>
+      <p>
+        The <ConceptsLink hash="route-records">route record</ConceptsLink>{" "}
+        defined by this Single Hash route builder.
+      </p>
       <DocsNavigator />
     </DocsArticle>
   );

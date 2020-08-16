@@ -1,6 +1,7 @@
 import React from "react";
 import { DocsNavigator } from "~/components/DocsNavigator";
 import { CodeBlock } from "~/util/CodeBlock";
+import { ConceptsLink } from "~/util/ConceptLink";
 import { DocsArticle } from "../DocsArticle";
 
 export const DocsBuilderSearch: React.FC = () => {
@@ -18,17 +19,17 @@ type SearchRouteBuilder<
         `}
       </CodeBlock>
       <p>
-        The <b>Search</b> route builder is a route builder that defines one
-        search query param (<code>?key=value</code> pair). By attaching to
-        another route, it can define a new route with a search query param
-        added.
+        The <b>Search</b>{" "}
+        <ConceptsLink hash="route-builders">route builder</ConceptsLink> is a
+        route builder that defines one search query param (
+        <code>?key=value</code> pair).
       </p>
       <p>
         A Search route builder always holds one route record that represents a
         route with the specified query parameter.
       </p>
 
-      <h3>Initiaization</h3>
+      <h3 id="initialization">Initiaization</h3>
       <CodeBlock>{`
 Rocon.Search<Key extends string, IsOptional extends boolean>(
   matchKey: Key,
@@ -42,13 +43,14 @@ type SearchRouteBuilderOptions<IsOptional extends boolean> = {
 `}</CodeBlock>
       <p>
         Creates a new instance of Search route builder. It has one route defined
-        from first, but it has no action. To define a route with action, use the{" "}
-        <code>action</code> method.
+        from first which has no action at first. To define a route with action,
+        use the <code>action</code> method.
       </p>
       <ul>
         <li>
           <code>matchKey</code>: Match key with which the value of search query
-          is saved in the match object.
+          is saved in the{" "}
+          <ConceptsLink hash="match-objects">match object</ConceptsLink>.
         </li>
         <li>
           <code>searchKey</code>: Name of search query param (<code>foo</code>{" "}
@@ -83,7 +85,7 @@ const builder = Rocon.Path()
   ._.foo.attach(Rocon.Search("key"));
 `}</CodeBlock>
 
-      <h3>builder.action(func)</h3>
+      <h3 id="action">builder.action(func)</h3>
       <CodeBlock>{`
 action(
   action: ActionType<ActionResult, Match>
@@ -102,7 +104,7 @@ const fooSearchRoute = Rocon.Search("foo")
   .action(({ foo }) => <p>The value of foo is {foo}</p>);
       `}</CodeBlock>
 
-      <h3>builder.attach(otherBuilder)</h3>
+      <h3 id="attach">builder.attach(otherBuilder)</h3>
       <CodeBlock>{`
 attach: AttachFunction<ActionResult, Match>
       `}</CodeBlock>
@@ -121,8 +123,11 @@ const foobarRoute = Rocon.Search("foo")
   .action(({ foo, bar }) => <p>Foo is {foo} and bar is {bar}</p>);
       `}</CodeBlock>
 
-      <h3>builder.route</h3>
-      <p>The route record defined by this Search route builder.</p>
+      <h3 id="route">builder.route</h3>
+      <p>
+        The <ConceptsLink hash="route-records">route record</ConceptsLink>{" "}
+        defined by this Search route builder.
+      </p>
       <DocsNavigator />
     </DocsArticle>
   );

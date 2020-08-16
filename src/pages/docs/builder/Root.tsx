@@ -1,6 +1,7 @@
 import React from "react";
 import { DocsNavigator } from "~/components/DocsNavigator";
 import { CodeBlock } from "~/util/CodeBlock";
+import { ConceptsLink } from "~/util/ConceptLink";
 import { DocsArticle } from "../DocsArticle";
 
 export const DocsBuilderRoot: React.FC = () => {
@@ -18,11 +19,13 @@ type RootRouteBuilder<
         `}
       </CodeBlock>
       <p>
-        The <b>Root</b> route builder is a route builder that defines a route
-        with a fixed location. It is useful when your app is deployed to a deep
-        location like <code>/path/to/your/app/</code>, in which case you can
-        create a Root route builder with path <code>/path/to/your/app</code> and
-        attach other routes under it.
+        The <b>Root</b>{" "}
+        <ConceptsLink hash="route-builders">route builder</ConceptsLink> is a
+        route builder that defines a route with a fixed location. It is useful
+        when your app is deployed to a deep location like{" "}
+        <code>/path/to/your/app/</code>, in which case you can create a Root
+        route builder with path <code>/path/to/your/app</code> and attach other
+        routes under it.
       </p>
       <p>
         A Root route builder always holds one route record that represents a
@@ -41,8 +44,8 @@ type RootRouteBuilderOptions = {
 `}</CodeBlock>
       <p>
         Creates a new instance of Root route builder. It has one route defined
-        from first, but it has no action. To define a route with action, use the{" "}
-        <code>action</code> method.
+        from first which has no action at first. To define a route with action,
+        use the <code>action</code> method.
       </p>
       <ul>
         <li>
@@ -64,7 +67,7 @@ const builder = Rocon.Root({
 });
 `}</CodeBlock>
 
-      <h3>builder.action(func)</h3>
+      <h3 id="action">builder.action(func)</h3>
       <CodeBlock>{`
 action(
   action: ActionType<ActionResult, Match>
@@ -75,7 +78,7 @@ action(
         associated to it.
       </p>
 
-      <h3>builder.attach(otherBuilder)</h3>
+      <h3 id="attach">builder.attach(otherBuilder)</h3>
       <CodeBlock>{`
 attach: AttachFunction<ActionResult, Match>
       `}</CodeBlock>
@@ -105,8 +108,11 @@ const routes = Rocon.Root({
   });
 `}</CodeBlock>
 
-      <h3>builder.route</h3>
-      <p>The route record defined by this Root route builder.</p>
+      <h3 id="route">builder.route</h3>
+      <p>
+        The <ConceptsLink hash="route-records">route record</ConceptsLink>{" "}
+        defined by this Root route builder.
+      </p>
       <DocsNavigator />
     </DocsArticle>
   );
