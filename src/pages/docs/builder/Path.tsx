@@ -3,6 +3,7 @@ import { Link } from "rocon/react";
 import { DocsNavigator } from "~/components/DocsNavigator";
 import { docsTypeRoutes } from "~/routes";
 import { CodeBlock } from "~/util/CodeBlock";
+import { ConceptsLink } from "~/util/ConceptLink";
 import { DocsArticle } from "../DocsArticle";
 
 export const DocsBuilderPath: React.FC = () => {
@@ -22,8 +23,9 @@ type PathRouteBuilder<
         `}
       </CodeBlock>
       <p>
-        The <b>Path</b> route builder is a route builder that defines one level
-        of pathname segments.
+        The <b>Path</b>{" "}
+        <ConceptsLink hash="route-builders">route builder</ConceptsLink> is a
+        route builder that defines one level of pathname segments.
       </p>
 
       <h3 id="initialization">Initiaization</h3>
@@ -45,7 +47,7 @@ route<Key extends string>(
         added. A{" "}
         <Link route={docsTypeRoutes._.pathSingleRouteInterface}>
           PathSingleRouteInterface
-        </Link>
+        </Link>{" "}
         object is passed to the <code>callback</code> function (if any). By
         providing a <code>callback</code> function, one can add an action or
         attach another route builder to the newly added route.
@@ -114,9 +116,11 @@ any<Key extends string, RD extends RouteDefinition<...>>(
       `}</CodeBlock>
       <p>
         Returns a new Path route builder with an <b>any route</b> (route that
-        catches all paths expect explicitly define ones) added.
-        <code>key</code> is a match object key with type <code>string</code>
-        whose content is the path segment catched by this route.
+        catches all paths expect explicitly defined ones) added.
+        <code>key</code> is a{" "}
+        <ConceptsLink hash="match-objects">match object</ConceptsLink> key with
+        type <code>string</code> whose content is the path segment catched by
+        this route.
       </p>
 
       <h4>Example</h4>
@@ -131,8 +135,9 @@ const catchAllRoutes = Rocon.Path()
 
       <h3 id="underbar">builder._</h3>
       <p>
-        The collection of all named route records defined in this Path route
-        builder.
+        The collection of all named{" "}
+        <ConceptsLink hash="route-records">route records</ConceptsLink> defined
+        in this Path route builder.
       </p>
 
       <h4>Example</h4>
@@ -153,13 +158,15 @@ foobarRoutes._.bar.attach(...);
 
       <h3 id="exactroute">builder.exactRoute</h3>
       <p>
-        Route record for an exact route defined in this route.
-        <code>undefined</code> if no exact route is defined.
+        <ConceptsLink hash="route-records">Route record</ConceptsLink> for an
+        exact route defined in this route. <code>undefined</code> if no exact
+        route is defined.
       </p>
 
       <h3 id="anyroute">builder.anyRoute</h3>
       <p>
-        Route record for an any route defined in this route.
+        <ConceptsLink hash="route-records">Route record</ConceptsLink> for an
+        any route defined in this route.
         <code>undefined</code> if no any route is defined.
       </p>
       <DocsNavigator />
