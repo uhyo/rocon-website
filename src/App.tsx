@@ -3,13 +3,13 @@ import { RoconRoot, useRoutes } from "rocon/react";
 import { SiteNavigation } from "./components/SiteNavigation";
 import { ErrorBoundary } from "./ErrorBoundary";
 import { toplevelRoutes } from "./routes";
-import { ScrollToTop } from "./util/ScrollToTop";
+import { ScrollOnTransition } from "./util/ScrollOnTransition";
 
 export const App: React.FC = () => {
   return (
     <RoconRoot>
       <ErrorBoundary>
-        <ScrollToTop />
+        <ScrollOnTransition />
         <AppInner />
       </ErrorBoundary>
     </RoconRoot>
