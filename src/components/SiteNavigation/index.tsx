@@ -12,6 +12,9 @@ export const SiteNavigation: React.FC = () => {
           <Link route={toplevelRoutes._.tutorial}>Rocon Tutorial</Link>
         </li>
         <li>
+          <Link route={toplevelRoutes._.docs}>Rocon Docs</Link>
+        </li>
+        <li>
           <ExternalLink href="https://github.com/uhyo/rocon">
             GitHub
           </ExternalLink>

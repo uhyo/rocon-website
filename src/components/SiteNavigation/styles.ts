@@ -15,7 +15,7 @@ export const siteNavigationCss = css`
     & > li {
       box-sizing: border-box;
       flex: 20% 0 0;
-      min-width: 14rem;
+      min-width: 11rem;
       align-self: center;
       padding: 0 1em;
 
