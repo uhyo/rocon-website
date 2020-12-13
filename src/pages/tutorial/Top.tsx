@@ -27,7 +27,7 @@ export const TutorialTop: React.FC = () => {
 
       <h3>Installation</h3>
       <pre>
-        <code>npm install rocon</code>
+        <code>npm install rocon history</code>
       </pre>
       <p>
         In order to use the React binding of Rocon, it requires{" "}
