@@ -109,7 +109,7 @@ const Menu: React.FC = ()=> {
   const navigate = useNavigate();
   return (
     <button onClick={()=> {
-      navigate(toplevelRoutes.exactRoute, { id: "uhyo" });
+      navigate(toplevelRoutes.anyRoute, { id: "uhyo" });
     }}>Go to uhyo's page</button>
   );
 };
